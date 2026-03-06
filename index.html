@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automating Auditing of Personalization Systems at Scale via LLMs</title>
+  <meta name="description" content="We develop LLM-powered agents that browse, read, and engage with social media platforms. We deploy 1,120 agents on X during the 2024 U.S. election, collecting over 200,000 exposures to study algorithmic personalization.">
+  <meta property="og:title" content="Automating Auditing of Personalization Systems at Scale via LLMs">
+  <meta property="og:description" content="We develop LLM-powered agents that browse, read, and engage with social media platforms. We deploy 1,120 agents on X during the 2024 U.S. election, collecting over 200,000 exposures to study algorithmic personalization.">
+  <meta property="og:image" content="https://llm-auditing-personalization.github.io/images/diagram_final.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="title">Automating Auditing of <span class="accent">Personalization Systems</span><br>at Scale via LLMs</h1>
+
+      <div class="authors">
+        <span>Alessandro Morosini<sup>*,1</sup></span>&ensp;
+        <span>Sarah H. Cen<sup>*,2</sup></span>&ensp;
+        <span>Andrew Ilyas<sup>2</sup></span>
+        <br>
+        <span>Hedi Driss<sup>1</sup></span>&ensp;
+        <span>Aleksander Madry<sup>1</sup></span>&ensp;
+        <span>Chara Podimata<sup>1</sup></span>
+      </div>
+
+      <div class="affiliations">
+        <sup>1</sup>Massachusetts Institute of Technology&ensp;&ensp;
+        <sup>2</sup>Carnegie Mellon University
+        <span class="corresponding"><sup>*</sup>Equal contribution. Correspondence: morosini@mit.edu, sarahcen@andrew.cmu.edu</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resource Links -->
+  <div class="links">
+    <a href="assets/pdfs/Auditing_Personalization_LLMs.pdf" class="link-button">
+      <img src="images/arxiv-logomark.svg" alt="arXiv" style="height: 16px; width: auto;">
+      Paper
+    </a>
+    <a href="assets/data/auditing_personalization_data.zip" class="link-button" download>
+      <img src="images/database_icon.png" alt="Data" style="height: 16px; width: auto;">
+      Data
+    </a>
+    <a href="#citation" class="link-button">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+      BibTeX
+    </a>
+  </div>
+
+  <!-- TL;DR -->
+  <section class="content-section">
+    <div class="container">
+      <h2>TL;DR</h2>
+      <div class="tldr-box">
+        <p>
+          <em>How does a platform's algorithm respond to who you are versus how you behave?</em>
+        </p>
+        <p style="margin-top: 0.7rem;">
+          To answer this question, we develop a framework to build <strong>LLM-powered agents</strong>
+          that browse, read, and engage with a social media platform. Each agent reasons and acts
+          according to a detailed <em>persona</em> grounded in real U.S. survey data. Unlike human
+          and traditional sock-puppet audits, where user traits like political ideology are inherently
+          entangled with behavior, our agents' personality is <strong>fully specified before any
+          interaction begins</strong>. This cleanly separates <em>what a user does</em> from
+          <em>who they are</em>, allowing us to both compare how the platform treats different user
+          groups and isolate the effect of demographic signals alone.
+        </p>
+        <p style="margin-top: 0.7rem;">
+          We deploy <strong>1,120 agents</strong> on 𝕏 during the <strong>2024 U.S. presidential
+          election</strong>, collecting over 200,000 exposures. We find that agents are systematically
+          exposed to more toxic, polarizing, and right-leaning content in the algorithmic <em>For You</em>
+          feed compared to the chronological <em>Following</em> feed, with effects that vary sharply
+          by ideology. Our counterfactual design further reveals that the platform responds to
+          demographic signals, but heterogeneously: the same attribute change can shift exposure
+          in opposite directions depending on the user type.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Figure -->
+  <section class="content-section">
+    <div class="container">
+      <h2>Framework</h2>
+      <div class="figure-container">
+        <img src="images/diagram_final.png" alt="Overview of our experimental framework for auditing personalization systems via LLM agents">
+        <p class="caption">
+          <strong>Overview of our experimental framework.</strong>
+          <em>Top:</em> each persona is constructed by combining demographics from the U.S. Census
+          with a political typology from Pew Research, producing an LLM prompt that describes
+          the agent's behavioral policy. Each persona is replicated into multiple accounts that share
+          the same policy but differ in a single platform-visible signal (location, age, or gender).
+          <em>Bottom:</em> each account interacts with 𝕏's recommendation system in a closed feedback loop.
+          The LLM agent reasons about each piece of content before deciding how to engage, creating a
+          realistic interaction trajectory.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="content-section" id="citation">
+    <div class="container">
+      <h2>Citation</h2>
+      <div class="bibtex-wrapper">
+        <button class="copy-btn" onclick="copyBibtex()">Copy</button>
+        <pre class="bibtex-block"><code>@article{morosini2026automating,
+  title  = {Automating Auditing of Personalization Systems at Scale via LLMs},
+  author = {Morosini, Alessandro and Cen, Sarah H. and Ilyas, Andrew
+            and Driss, Hedi and Madry, Aleksander and Podimata, Chara},
+  url    = {https://llm-auditing-personalization.github.io/},
+  year   = {2026}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    function copyBibtex() {
+      const text = document.querySelector('.bibtex-block code').textContent;
+      navigator.clipboard.writeText(text);
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 1500);
+    }
+  </script>
+
+</body>
+</html>

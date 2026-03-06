@@ -1,0 +1,208 @@
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #1a1a1a;
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: #2254a8; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Layout ── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Accent color ── */
+.accent { color: #3272c0; }
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 3.5rem 0 1.5rem;
+}
+
+.hero .title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.authors {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+.authors a { color: #2254a8; }
+
+.affiliations {
+  font-size: 0.88rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.affiliations .corresponding {
+  display: block;
+  margin-top: 0.3rem;
+  font-style: italic;
+  color: #888;
+}
+
+/* ── Resource Links ── */
+.links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 1.2rem 0 2rem;
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  background: #fff;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.link-button:hover {
+  border-color: #999;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-decoration: none;
+}
+
+.link-button svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* ── Sections ── */
+.content-section {
+  padding: 1.8rem 0;
+}
+
+.content-section h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ── TL;DR / Abstract Box ── */
+.tldr-box {
+  background: #fff;
+  border-left: 4px solid #3272c0;
+  padding: 1.3rem 1.5rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+/* ── Figure ── */
+.figure-container {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.figure-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.caption {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.55;
+  margin-top: 0.8rem;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── BibTeX ── */
+.bibtex-wrapper {
+  position: relative;
+  background: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.bibtex-block {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+  color: #333;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  color: #666;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.copy-btn:hover {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 2rem 0 2.5rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+footer a { color: #aaa; }
+footer a:hover { color: #666; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .hero .title { font-size: 1.5rem; }
+  .authors { font-size: 0.9rem; }
+  .link-button { padding: 7px 14px; font-size: 0.85rem; }
+  .container { padding: 0 16px; }
+}
